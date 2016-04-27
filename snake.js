@@ -1,15 +1,3 @@
-/*Write a program that uses console.log to print all the numbers from 1 to 100,
-with two exceptions. For numbers divisible by 3, print "Fizz" instead of the
-number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.
-When you have that working, modify your program to print "FizzBuzz"
-for numbers that are divisible by both 3 and 5.
-(This is actually an interview question that has been claimed to weed
-out a significant percentage of programmer candidates. So if you solved it,
-you’re now allowed to feel good about yourself.)
-
-
-*/
-
 // GLOBAL VARIABLES
 
 // CONSTANTS
@@ -54,23 +42,35 @@ var grid = {
 var snake = {
     
     direction: null,
+    last: null,
     _queue: null,
     
     init: function(d,x,y) {
-        
+        this.direction = d;
+        this._queue = [];
+        this.insert(x,y);
     },
     
     insert: function(x,y) {
-        
+        this._queue.unshift({x:x, y:y});
+        this.last = this._queue[0];
     },
     
     remove: function() {
+        return this._queue.pop();
         
     }
     
 }
 
-function setFood() {}
+function setFood() {
+    var empty = [];
+    for (var x = 0; x < grid.width; x++){
+        for (var y = 0; y < grid.height; y++) {
+            
+        }
+    }
+}
 
 function main() {}
 
